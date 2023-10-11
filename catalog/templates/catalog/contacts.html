@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skystore - Контакты</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h5 {
+            font-size: 2em;
+            color: #212424;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #212424;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #212424;
+        }
+
+        .container {
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+            text-align: center;
+        }
+
+        .pricing-header,
+        .comment-section,
+        footer {
+            text-align: center;
+        }
+
+        .pricing-header h1,
+        .comment-section h2 {
+            font-size: 3.5em;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 2.5em;
+            margin-bottom: 0;
+        }
+
+        .form-floating label {
+            color: #007bff;
+        }
+
+        .form-control {
+            margin-bottom: 20px;
+        }
+
+        .buy-button {
+            font-size: 1.5em;
+            padding: 15px 30px;
+            border-radius: 25px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+
+        .list-unstyled-2 {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .list-unstyled-2 li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 4rem 0;
+        }
+
+        footer h5 {
+            color: #007bff;
+        }
+
+        footer small {
+            color: #007bff;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h5>Skystore</h5>
+        <nav>
+            <a href="/">Каталог</a>
+            <a href="/contacts/">Контакты</a>
+            <a href="/home/">Домашняя страница</a>
+        </nav>
+    </header>
+
+    <div class="row">
+    <div class="col-md-6">
+        <div class="container-1">
+            <h4 class="my-0 font-weight-normal">Категории</h4>
+            <ul class="list-unstyled-2">
+                <li><a href="#" class="text-muted">Рассылки</a></li>
+                <li><a href="#" class="text-muted">Телеграм боты</a></li>
+                <li><a href="#" class="text-muted">Полезные утилиты</a></li>
+                <li><a href="#" class="text-muted">Веб-приложения</a></li>
+                <li><a href="#" class="text-muted">Микросервисы</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card mb-4">
+            <div class="card-header" style="font-size: 1.0em;">
+                <h1 class="my-0 font-weight-normal">Заполните форму для подачи заявки</h1>
+            </div>
+
+
+                <div class="col-lg-9 col-md-6 col-sm-12">
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <tr>
+                                <td class="w-25">Страна</td>
+                                <td>USA</td>
+                            </tr>
+                            <tr>
+                                <td class="w-25">ИНН</td>
+                                <td>91-1144442</td>
+                            </tr>
+                            <tr>
+                                <td class="w-25">Адрес</td>
+                                <td>Redmond,WA,98052-6399</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card-body">
+                        <form method="post" action="" class="form-floating">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="name">Имя</label>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone">Телефон</label>
+                                <input type="text" name="phone" class="form-control" id="phone" placeholder="Контактный телефон" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message">Сообщение</label>
+                                <textarea type="text" name="message" class="form-control" id="message" placeholder="Ваше сообщение" required></textarea>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-block buy-button">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <h5>SkyStore</h5>
+                    <small class="d-block mb-3 text-muted">&copy; 2023</small>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
